@@ -28,7 +28,7 @@ it("should ignore numbers bigger than 1000", () => {
     expect(add("3,1000")).toBe(3);
 });
 
-it("should handle a different delimeter", () => {
+it("should handle a different delimiter", () => {
     expect(add("//;\n1;2")).toBe(3);
 })
 
@@ -36,6 +36,10 @@ it("should throw an error and print out negative number", () => {
     expect(add('4,-1\n-2,1,-3')).toBe("Negatives not allowed: -1,-2,-3");
 });
 
-it("should handle a different delimeter", () => {
+it("should handle a different delimiter", () => {
     expect(add("//I1\n2d;a3")).toBe(6);
 })
+
+it("should ignore numbers bigger than 1000", () => {
+    expect(add("3,1000,2,3001,3,5000")).toBe(8);
+});
