@@ -3,7 +3,7 @@ function add (numb){
     if(numb == "" || numb == null)
         return 0;
 
-    var numbers = numb.replace(/\n|;|\/|\\|[.*]|[%]|[$][/\d]+/g,",");
+    var numbers = numb.replace(/\n|;|[a-z]|[A-Z]|\/|\\|[.*]|[%]|[$][/\d]+/g,",");
 
     try {
         if(numbers != '') {
