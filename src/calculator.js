@@ -1,11 +1,11 @@
-function add (numbers){
+function add (numb){
 
-    var numbers = numbers.replace(/\n|;|\/|\\|[.*]|[%]|[$]/g,",");
+    if(numb == "" || numb == null)
+        return 0;
+
+    var numbers = numb.replace(/\n|;|\/|\\|[.*]|[%]|[$][/\d]+/g,",");
 
     try {
-        if(numbers == "")
-            return 0;
-
         if(numbers != '') {
             var numberArray = numbers.split(",");
             return sum(numberArray, ',');
@@ -23,9 +23,9 @@ function add (numbers){
 function sum(numberArray){
     var total = 0;
     var negativeArray = [];
-
     for(var i=0; i < numberArray.length; i++) {
-
+        if(numberArray[i] == "")
+        continue;
 
         if(numberArray[i] < 0) {
             containsNegative = true;

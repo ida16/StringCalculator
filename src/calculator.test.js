@@ -20,10 +20,14 @@ it("should handle new lines between numbers", () => {
     expect(add("1\n2,3")).toBe(6);
 })
 
-it('should throw an error and print out negative number', () => {
+it("should throw an error and print out negative number", () => {
     expect(add('4\n-2')).toBe("Negatives not allowed: -2");
 });
 
-it('should ignore numbers bigger than 1000', () => {
+it("should ignore numbers bigger than 1000", () => {
     expect(add("3,1000")).toBe(3);
 });
+
+it("should handle a different delimeter", () => {
+    expect(add("//;\n1;2")).toBe(3);
+})
